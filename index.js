@@ -5,9 +5,9 @@ const User = require("./database");
 
 
 app.set("view engine","ejs");
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__views, 'views'));
 app.use(express.urlencoded({extended:false}))
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__views, 'public')));
 
 app.get("/",async(req,res)=>{
     const users = await User.find({});
